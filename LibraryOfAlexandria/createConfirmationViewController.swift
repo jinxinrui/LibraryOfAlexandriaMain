@@ -7,8 +7,23 @@
 //
 
 import UIKit
+import CoreData
+
+protocol AddBookProtocol {
+    func addBook(book: Book) -> Bool
+}
 
 class createConfirmationViewController: UIViewController {
+    
+    private var bookList: [Book] = []
+    private var managedObjectContext: NSManagedObjectContext
+    var addBookDelegate: AddBookProtocol?
+    
+    required init(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
+        super.init(coder: aDecoder)!
+    }
     
     var currentBook = [String]()
 
@@ -41,6 +56,25 @@ class createConfirmationViewController: UIViewController {
         genreView.text = currentBook[6]
         descrView.text = currentBook[7]
         
+    }
+    
+    func addBookData() {
+        let book = NSEntityDescription.insertNewObject(forEntityName: "Book", into: managedObjectContext) as! Book
+        book.title = currentBook[0]
+        book.author = currentBook[0]
+        book.isbn = currentBook[0]
+        book.publisher = currentBook[0]
+        book.edition = Int16(currentBook[0])!
+        book.year = Int16(currentBook[0])!
+        book.genre = currentBook[0]
+        book.descr = currentBook[0]
+        
+        do {
+            try managedObjectContext.save()
+        }
+        catch let error {
+            print("Could not save Core Data: \(error)")
+        }
     }
     
     override func viewDidLoad() {

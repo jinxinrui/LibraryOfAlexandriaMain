@@ -7,25 +7,9 @@
 //
 
 import UIKit
-import CoreData
-
-protocol AddBookProtocol {
-    func addBook(book: Book) -> Bool
-}
 
 class AddNewBookViewController: UIViewController {
     
-    private var bookList: [Book] = []
-    private var managedObjectContext: NSManagedObjectContext
-    var addBookDelegate: AddBookProtocol?
-    
-    required init(coder aDecoder: NSCoder) {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
-        super.init(coder: aDecoder)!
-    }
-
-
     @IBOutlet weak var inputTitle: UITextField!
     
     @IBOutlet weak var inputIsbn: UITextField!
@@ -62,24 +46,6 @@ class AddNewBookViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func addBookData() {
-        let book = NSEntityDescription.insertNewObject(forEntityName: "Book", into: managedObjectContext) as! Book
-        book.title = inputTitle.text!
-        book.author = inputAuthor.text!
-        book.isbn = inputIsbn.text!
-        book.publisher = inputPublisher.text!
-        book.edition = Int16(inputEdition.text!)!
-        book.year = Int16(inputYear.text!)!
-        book.genre = inputGenre.text!
-        book.descr = inputDescr.text!
-        
-        do {
-            try managedObjectContext.save()
-        }
-        catch let error {
-            print("Could not save Core Data: \(error)")
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
