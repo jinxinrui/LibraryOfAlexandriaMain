@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BC70BF72081C14800B11B48 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC70BF62081C14800B11B48 /* CoreData.framework */; };
+		5BC70C012081CEFD00B11B48 /* SearchBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C002081CEFD00B11B48 /* SearchBookTableViewController.swift */; };
+		5BC70C0E2081D38F00B11B48 /* BookList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C0A2081D38F00B11B48 /* BookList+CoreDataClass.swift */; };
+		5BC70C0F2081D38F00B11B48 /* BookList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C0B2081D38F00B11B48 /* BookList+CoreDataProperties.swift */; };
+		5BC70C102081D38F00B11B48 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C0C2081D38F00B11B48 /* Book+CoreDataClass.swift */; };
+		5BC70C112081D38F00B11B48 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C0D2081D38F00B11B48 /* Book+CoreDataProperties.swift */; };
+		5BC70C132081E6B900B11B48 /* createConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC70C122081E6B900B11B48 /* createConfirmationViewController.swift */; };
+		AF3742A32080D8B300E848A6 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3742A22080D8B300E848A6 /* SearchTableViewCell.swift */; };
+		AF5E9722207DE4C2005B6A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9721207DE4C2005B6A86 /* AppDelegate.swift */; };
+		AF5E9724207DE4C2005B6A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9723207DE4C2005B6A86 /* ViewController.swift */; };
+		AF5E9727207DE4C2005B6A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E9725207DE4C2005B6A86 /* Main.storyboard */; };
+		AF5E972A207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9728207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld */; };
+		AF5E972C207DE4C2005B6A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5E972B207DE4C2005B6A86 /* Assets.xcassets */; };
+		AF5E972F207DE4C2005B6A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5E972D207DE4C2005B6A86 /* LaunchScreen.storyboard */; };
+		AF5E973A207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9739207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift */; };
+		AF5E9745207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9744207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift */; };
+		AF5E9755207DE5D3005B6A86 /* AddNewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9754207DE5D3005B6A86 /* AddNewBookViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF5E9736207DE4C2005B6A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF5E9716207DE4C2005B6A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF5E971D207DE4C2005B6A86;
+			remoteInfo = LibraryOfAlexandria;
+		};
+		AF5E9741207DE4C2005B6A86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF5E9716207DE4C2005B6A86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF5E971D207DE4C2005B6A86;
+			remoteInfo = LibraryOfAlexandria;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BC70BF62081C14800B11B48 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5BC70C002081CEFD00B11B48 /* SearchBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewController.swift; sourceTree = "<group>"; };
+		5BC70C0A2081D38F00B11B48 /* BookList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5BC70C0B2081D38F00B11B48 /* BookList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5BC70C0C2081D38F00B11B48 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5BC70C0D2081D38F00B11B48 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5BC70C122081E6B900B11B48 /* createConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createConfirmationViewController.swift; sourceTree = "<group>"; };
+		AF3742A22080D8B300E848A6 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		AF5E971E207DE4C2005B6A86 /* LibraryOfAlexandria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryOfAlexandria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5E9721207DE4C2005B6A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF5E9723207DE4C2005B6A86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF5E9726207DE4C2005B6A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF5E9729207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LibraryOfAlexandria.xcdatamodel; sourceTree = "<group>"; };
+		AF5E972B207DE4C2005B6A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF5E972E207DE4C2005B6A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF5E9730207DE4C2005B6A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5E9735207DE4C2005B6A86 /* LibraryOfAlexandriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibraryOfAlexandriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5E9739207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOfAlexandriaTests.swift; sourceTree = "<group>"; };
+		AF5E973B207DE4C2005B6A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5E9740207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibraryOfAlexandriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5E9744207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOfAlexandriaUITests.swift; sourceTree = "<group>"; };
+		AF5E9746207DE4C2005B6A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5E9754207DE5D3005B6A86 /* AddNewBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBookViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF5E971B207DE4C2005B6A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC70BF72081C14800B11B48 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E9732207DE4C2005B6A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E973D207DE4C2005B6A86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BC70BF52081C14800B11B48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BC70BF62081C14800B11B48 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF5E9715207DE4C2005B6A86 = {
+			isa = PBXGroup;
+			children = (
+				5BC70C0A2081D38F00B11B48 /* BookList+CoreDataClass.swift */,
+				5BC70C0B2081D38F00B11B48 /* BookList+CoreDataProperties.swift */,
+				5BC70C0C2081D38F00B11B48 /* Book+CoreDataClass.swift */,
+				5BC70C0D2081D38F00B11B48 /* Book+CoreDataProperties.swift */,
+				AF5E9720207DE4C2005B6A86 /* LibraryOfAlexandria */,
+				AF5E9738207DE4C2005B6A86 /* LibraryOfAlexandriaTests */,
+				AF5E9743207DE4C2005B6A86 /* LibraryOfAlexandriaUITests */,
+				AF5E971F207DE4C2005B6A86 /* Products */,
+				5BC70BF52081C14800B11B48 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF5E971F207DE4C2005B6A86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E971E207DE4C2005B6A86 /* LibraryOfAlexandria.app */,
+				AF5E9735207DE4C2005B6A86 /* LibraryOfAlexandriaTests.xctest */,
+				AF5E9740207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF5E9720207DE4C2005B6A86 /* LibraryOfAlexandria */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E9721207DE4C2005B6A86 /* AppDelegate.swift */,
+				AF5E9723207DE4C2005B6A86 /* ViewController.swift */,
+				AF5E9725207DE4C2005B6A86 /* Main.storyboard */,
+				AF5E972B207DE4C2005B6A86 /* Assets.xcassets */,
+				AF5E972D207DE4C2005B6A86 /* LaunchScreen.storyboard */,
+				AF5E9730207DE4C2005B6A86 /* Info.plist */,
+				AF5E9728207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld */,
+				AF5E9754207DE5D3005B6A86 /* AddNewBookViewController.swift */,
+				AF3742A22080D8B300E848A6 /* SearchTableViewCell.swift */,
+				5BC70C002081CEFD00B11B48 /* SearchBookTableViewController.swift */,
+				5BC70C122081E6B900B11B48 /* createConfirmationViewController.swift */,
+			);
+			path = LibraryOfAlexandria;
+			sourceTree = "<group>";
+		};
+		AF5E9738207DE4C2005B6A86 /* LibraryOfAlexandriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E9739207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift */,
+				AF5E973B207DE4C2005B6A86 /* Info.plist */,
+			);
+			path = LibraryOfAlexandriaTests;
+			sourceTree = "<group>";
+		};
+		AF5E9743207DE4C2005B6A86 /* LibraryOfAlexandriaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E9744207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift */,
+				AF5E9746207DE4C2005B6A86 /* Info.plist */,
+			);
+			path = LibraryOfAlexandriaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF5E971D207DE4C2005B6A86 /* LibraryOfAlexandria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5E9749207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandria" */;
+			buildPhases = (
+				AF5E971A207DE4C2005B6A86 /* Sources */,
+				AF5E971B207DE4C2005B6A86 /* Frameworks */,
+				AF5E971C207DE4C2005B6A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibraryOfAlexandria;
+			productName = LibraryOfAlexandria;
+			productReference = AF5E971E207DE4C2005B6A86 /* LibraryOfAlexandria.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF5E9734207DE4C2005B6A86 /* LibraryOfAlexandriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5E974C207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandriaTests" */;
+			buildPhases = (
+				AF5E9731207DE4C2005B6A86 /* Sources */,
+				AF5E9732207DE4C2005B6A86 /* Frameworks */,
+				AF5E9733207DE4C2005B6A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF5E9737207DE4C2005B6A86 /* PBXTargetDependency */,
+			);
+			name = LibraryOfAlexandriaTests;
+			productName = LibraryOfAlexandriaTests;
+			productReference = AF5E9735207DE4C2005B6A86 /* LibraryOfAlexandriaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF5E973F207DE4C2005B6A86 /* LibraryOfAlexandriaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5E974F207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandriaUITests" */;
+			buildPhases = (
+				AF5E973C207DE4C2005B6A86 /* Sources */,
+				AF5E973D207DE4C2005B6A86 /* Frameworks */,
+				AF5E973E207DE4C2005B6A86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF5E9742207DE4C2005B6A86 /* PBXTargetDependency */,
+			);
+			name = LibraryOfAlexandriaUITests;
+			productName = LibraryOfAlexandriaUITests;
+			productReference = AF5E9740207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF5E9716207DE4C2005B6A86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = xjin0001;
+				TargetAttributes = {
+					AF5E971D207DE4C2005B6A86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					AF5E9734207DE4C2005B6A86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF5E971D207DE4C2005B6A86;
+					};
+					AF5E973F207DE4C2005B6A86 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF5E971D207DE4C2005B6A86;
+					};
+				};
+			};
+			buildConfigurationList = AF5E9719207DE4C2005B6A86 /* Build configuration list for PBXProject "LibraryOfAlexandria" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF5E9715207DE4C2005B6A86;
+			productRefGroup = AF5E971F207DE4C2005B6A86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF5E971D207DE4C2005B6A86 /* LibraryOfAlexandria */,
+				AF5E9734207DE4C2005B6A86 /* LibraryOfAlexandriaTests */,
+				AF5E973F207DE4C2005B6A86 /* LibraryOfAlexandriaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF5E971C207DE4C2005B6A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF5E972F207DE4C2005B6A86 /* LaunchScreen.storyboard in Resources */,
+				AF5E972C207DE4C2005B6A86 /* Assets.xcassets in Resources */,
+				AF5E9727207DE4C2005B6A86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E9733207DE4C2005B6A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E973E207DE4C2005B6A86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF5E971A207DE4C2005B6A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF5E972A207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld in Sources */,
+				5BC70C132081E6B900B11B48 /* createConfirmationViewController.swift in Sources */,
+				5BC70C102081D38F00B11B48 /* Book+CoreDataClass.swift in Sources */,
+				AF5E9724207DE4C2005B6A86 /* ViewController.swift in Sources */,
+				5BC70C0F2081D38F00B11B48 /* BookList+CoreDataProperties.swift in Sources */,
+				5BC70C012081CEFD00B11B48 /* SearchBookTableViewController.swift in Sources */,
+				AF5E9755207DE5D3005B6A86 /* AddNewBookViewController.swift in Sources */,
+				AF3742A32080D8B300E848A6 /* SearchTableViewCell.swift in Sources */,
+				AF5E9722207DE4C2005B6A86 /* AppDelegate.swift in Sources */,
+				5BC70C112081D38F00B11B48 /* Book+CoreDataProperties.swift in Sources */,
+				5BC70C0E2081D38F00B11B48 /* BookList+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E9731207DE4C2005B6A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF5E973A207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF5E973C207DE4C2005B6A86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF5E9745207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF5E9737207DE4C2005B6A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF5E971D207DE4C2005B6A86 /* LibraryOfAlexandria */;
+			targetProxy = AF5E9736207DE4C2005B6A86 /* PBXContainerItemProxy */;
+		};
+		AF5E9742207DE4C2005B6A86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF5E971D207DE4C2005B6A86 /* LibraryOfAlexandria */;
+			targetProxy = AF5E9741207DE4C2005B6A86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF5E9725207DE4C2005B6A86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF5E9726207DE4C2005B6A86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF5E972D207DE4C2005B6A86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF5E972E207DE4C2005B6A86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF5E9747207DE4C2005B6A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF5E9748207DE4C2005B6A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF5E974A207DE4C2005B6A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandria/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF5E974B207DE4C2005B6A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandria/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AF5E974D207DE4C2005B6A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandriaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LibraryOfAlexandria.app/LibraryOfAlexandria";
+			};
+			name = Debug;
+		};
+		AF5E974E207DE4C2005B6A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandriaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LibraryOfAlexandria.app/LibraryOfAlexandria";
+			};
+			name = Release;
+		};
+		AF5E9750207DE4C2005B6A86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandriaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LibraryOfAlexandria;
+			};
+			name = Debug;
+		};
+		AF5E9751207DE4C2005B6A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LibraryOfAlexandriaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = monash.LibraryOfAlexandriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LibraryOfAlexandria;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF5E9719207DE4C2005B6A86 /* Build configuration list for PBXProject "LibraryOfAlexandria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF5E9747207DE4C2005B6A86 /* Debug */,
+				AF5E9748207DE4C2005B6A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF5E9749207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF5E974A207DE4C2005B6A86 /* Debug */,
+				AF5E974B207DE4C2005B6A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF5E974C207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF5E974D207DE4C2005B6A86 /* Debug */,
+				AF5E974E207DE4C2005B6A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF5E974F207DE4C2005B6A86 /* Build configuration list for PBXNativeTarget "LibraryOfAlexandriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF5E9750207DE4C2005B6A86 /* Debug */,
+				AF5E9751207DE4C2005B6A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF5E9728207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF5E9729207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodel */,
+			);
+			currentVersion = AF5E9729207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodel */;
+			path = LibraryOfAlexandria.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AF5E9716207DE4C2005B6A86 /* Project object */;
+}
