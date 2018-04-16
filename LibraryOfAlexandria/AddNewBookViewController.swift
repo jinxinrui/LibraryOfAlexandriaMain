@@ -29,19 +29,7 @@ class AddNewBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Book")
-        do {
-            bookList = try managedObjectContext.fetch(fetchRequest) as! [Book]
-            if bookList.count == 0 {
-                addBookData()
-                bookList = try managedObjectContext.fetch(fetchRequest) as! [Book]
-            }
-        }
-        catch {
-            fatalError("Failed to fetch super heroes: \(error)")
-        }
- */
+       
 
         // Do any additional setup after loading the view.
     }
@@ -53,6 +41,19 @@ class AddNewBookViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // validate the textField
+        
+        let messageString: String  = "Not all fields are filled in!"
+        
+        let alertController = UIAlertController(title: "Alert", message: messageString, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title:"Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        
+        if inputTitle.text == "" {
+            self.present(alertController, animated: true, completion: nil)
+        }
+ 
+        
         if segue.identifier == "createDetailSegue" {
             let title = inputTitle.text!
             let isbn = inputIsbn.text!
@@ -65,6 +66,7 @@ class AddNewBookViewController: UIViewController {
             
             let detail: [String] = [title, isbn, author, publisher, edition, year, genre, descr]
             if let destinationVC = segue.destination as? createConfirmationViewController {
+                // currentBook defined in createConfirmationViewController
                 destinationVC.currentBook = detail
             }
         }

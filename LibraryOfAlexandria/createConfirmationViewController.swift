@@ -43,6 +43,12 @@ class createConfirmationViewController: UIViewController {
     
     @IBOutlet weak var descrView: UILabel!
     
+    /*
+     viewWillAppear method is called on a View Controller just before that
+     view appears on the screen. All it does (in this
+     case) is look at the currentBook property (which we set in the prepareForSegue method in the AddNewBookViewController
+     before the page loaded) and set the text for the labels to the correct values
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -61,16 +67,17 @@ class createConfirmationViewController: UIViewController {
     func addBookData() {
         let book = NSEntityDescription.insertNewObject(forEntityName: "Book", into: managedObjectContext) as! Book
         book.title = currentBook[0]
-        book.author = currentBook[0]
-        book.isbn = currentBook[0]
-        book.publisher = currentBook[0]
-        book.edition = Int16(currentBook[0])!
-        book.year = Int16(currentBook[0])!
-        book.genre = currentBook[0]
-        book.descr = currentBook[0]
+        book.isbn = currentBook[1]
+        book.author = currentBook[2]
+        book.publisher = currentBook[3]
+        book.edition = Int16(currentBook[4])!
+        book.year = Int16(currentBook[5])!
+        book.genre = currentBook[6]
+        book.descr = currentBook[7]
         
         do {
             try managedObjectContext.save()
+            print ("saved")
         }
         catch let error {
             print("Could not save Core Data: \(error)")
@@ -88,6 +95,12 @@ class createConfirmationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // add book to CoreData
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addBookSegue" {
+            self.addBookData()
+        }
+    }
 
     /*
     // MARK: - Navigation

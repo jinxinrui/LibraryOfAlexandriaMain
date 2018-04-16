@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5kO-bi-pyZ" customClass="SearchTableViewCell" customModule="LibraryOfAlexandria" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="5kO-bi-pyZ" customClass="SearchTableViewCell" customModule="LibraryOfAlexandria" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5kO-bi-pyZ" id="ml9-gw-fVv">
@@ -85,6 +85,23 @@
                                     <outlet property="authorLabel" destination="Ah9-vf-E7S" id="yea-o4-xQJ"/>
                                     <outlet property="titleLabel" destination="zTY-9v-Bov" id="r6E-J4-n6p"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalCell" textLabel="fwB-20-ILd" style="IBUITableViewCellStyleDefault" id="nWA-Pj-lyk" customClass="SearchTableViewCell" customModule="LibraryOfAlexandria" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nWA-Pj-lyk" id="q5d-7h-Ful">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fwB-20-ILd">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -423,7 +440,11 @@
                         <viewLayoutGuide key="safeArea" id="uy4-XZ-Nv5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book Detail" id="Fat-4w-BF4">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="Quu-zT-Jci"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Quu-zT-Jci">
+                            <connections>
+                                <segue destination="vVH-ay-95g" kind="show" identifier="addBookSegue" id="lOL-o2-Fv2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="authorView" destination="Myf-1F-sHd" id="3Vf-WG-lQ4"/>
@@ -438,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xv3-BI-XUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="83"/>
+            <point key="canvasLocation" x="2281" y="-690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9JK-4o-ldg">

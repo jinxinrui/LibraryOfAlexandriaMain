@@ -11,8 +11,8 @@ import CoreData
 
 class SearchBookTableViewController: UITableViewController {
     
-    private var bookList: [Book] = []
-    private var currentList: BookList?
+    private var books: [Book] = []
+
     private var managedObjectContext: NSManagedObjectContext
     
     private let SECTION_BOOKS = 0
@@ -27,17 +27,9 @@ class SearchBookTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "BookList")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Book")
         do{
-            let lists = try managedObjectContext.fetch(fetchRequest) as! [BookList]
-            if lists.count == 0 {
-                currentList = NSEntityDescription.insertNewObject(forEntityName: "BookList", into: managedObjectContext) as? BookList
-                saveData()
-            }
-            else {
-                currentList = lists.first
-                bookList = currentList?.books?.allObjects as! [Book]
-            }
+            books = try managedObjectContext.fetch(fetchRequest) as! [Book]
         }
             catch {
                 fatalError("Failed to fetch book list: \(error)")
@@ -45,7 +37,7 @@ class SearchBookTableViewController: UITableViewController {
         }
     
 
-
+/*
     func saveData() {
         do {
             try managedObjectContext.save()
@@ -54,6 +46,7 @@ class SearchBookTableViewController: UITableViewController {
             print("Could not save Core Data: \(error)")
         }
     }
+ */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,15 +65,30 @@ class SearchBookTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        var cellReuseIdentifier = "BookCell"
+        if indexPath.section == SECTION_COUNT {
+            cellReuseIdentifier = "TotalCell"
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
 
         // Configure the cell...
+        if indexPath.section == SECTION_BOOKS {
+            let bookCell = cell as! SearchTableViewCell
+            
+            bookCell.titleLabel.text = books[indexPath.row].title
+            bookCell.authorLabel.text = books[indexPath.row].author
+            
+        }
+        else {
+            cell.textLabel?.text = "\(books.count) Books"
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
