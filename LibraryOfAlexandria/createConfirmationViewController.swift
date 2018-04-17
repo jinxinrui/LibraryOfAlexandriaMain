@@ -9,15 +9,10 @@
 import UIKit
 import CoreData
 
-protocol AddBookProtocol {
-    func addBook(book: Book) -> Bool
-}
-
 class createConfirmationViewController: UIViewController {
     
-    private var bookList: [Book] = []
+    //private var bookList: [Book] = []
     private var managedObjectContext: NSManagedObjectContext
-    var addBookDelegate: AddBookProtocol?
     
     required init(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate

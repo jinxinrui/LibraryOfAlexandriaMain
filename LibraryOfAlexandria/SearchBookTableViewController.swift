@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SearchBookTableViewController: UITableViewController {
+class SearchBookTableViewController: UITableViewController, UISearchResultsUpdating {
     
     private var books: [Book] = []
     
@@ -37,10 +37,26 @@ class SearchBookTableViewController: UITableViewController {
             catch {
                 fatalError("Failed to fetch books: \(error)")
             }
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search People"
+        navigationItem.searchController = searchController
         }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text?.lowercased(), searchText.count > 0 {
+            filteredList = filteredList.filter({(book: Book) -> Bool in return
+                (book.title?.lowercased().contains(searchText))!
+            })
+        }
+        else {
+            filteredList = books
+        }
+        
+        tableView.reloadData()
+    }
 
-/*
     func saveData() {
         do {
             try managedObjectContext.save()
@@ -49,7 +65,7 @@ class SearchBookTableViewController: UITableViewController {
             print("Could not save Core Data: \(error)")
         }
     }
- */
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,12 +85,11 @@ class SearchBookTableViewController: UITableViewController {
         if (section == SECTION_COUNT) {
             return 1
         }
-        return books.count
+        return filteredList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         var cellReuseIdentifier = "BookCell"
         if indexPath.section == SECTION_COUNT {
             cellReuseIdentifier = "TotalCell"
@@ -85,12 +100,11 @@ class SearchBookTableViewController: UITableViewController {
         if indexPath.section == SECTION_BOOKS {
             let bookCell = cell as! SearchTableViewCell
             
-            bookCell.titleLabel.text = books[indexPath.row].title
-            bookCell.authorLabel.text = books[indexPath.row].author
-            
+            bookCell.titleLabel.text = filteredList[indexPath.row].title
+            bookCell.authorLabel.text = filteredList[indexPath.row].author
         }
         else {
-            cell.textLabel?.text = "\(books.count) Books"
+            cell.textLabel?.text = "\(filteredList.count) Books"
         }
 
         return cell
@@ -110,7 +124,7 @@ class SearchBookTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let deletedBook = books.remove(at: indexPath.row)
+            let deletedBook = filteredList.remove(at: indexPath.row)
             managedObjectContext.delete(deletedBook)
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -118,15 +132,6 @@ class SearchBookTableViewController: UITableViewController {
             tableView.reloadSections([SECTION_COUNT], with: .automatic)
             
             saveData()
-        }
-    }
-    
-    func saveData() {
-        do {
-            try managedObjectContext.save()
-        }
-        catch let error {
-            print("Could not save Core Data:\(error)")
         }
     }
         
