@@ -12,6 +12,8 @@ import CoreData
 class SearchBookTableViewController: UITableViewController {
     
     private var books: [Book] = []
+    
+    private var filteredList: [Book] = []
 
     private var managedObjectContext: NSManagedObjectContext
     
@@ -30,9 +32,10 @@ class SearchBookTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Book")
         do{
             books = try managedObjectContext.fetch(fetchRequest) as! [Book]
+            filteredList = books
         }
             catch {
-                fatalError("Failed to fetch book list: \(error)")
+                fatalError("Failed to fetch books: \(error)")
             }
         }
     
@@ -57,12 +60,16 @@ class SearchBookTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2 // modified from 0 to 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        // added
+        if (section == SECTION_COUNT) {
+            return 1
+        }
+        return books.count
     }
 
     
@@ -98,17 +105,32 @@ class SearchBookTableViewController: UITableViewController {
     }
     */
 
-    /*
+    // warning: incomplete, cannot delte data
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let deletedBook = books.remove(at: indexPath.row)
+            managedObjectContext.delete(deletedBook)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            tableView.reloadSections([SECTION_COUNT], with: .automatic)
+            
+            saveData()
+        }
     }
-    */
+    
+    func saveData() {
+        do {
+            try managedObjectContext.save()
+        }
+        catch let error {
+            print("Could not save Core Data:\(error)")
+        }
+    }
+        
+    
 
     /*
     // Override to support rearranging the table view.

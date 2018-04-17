@@ -77,7 +77,6 @@ class createConfirmationViewController: UIViewController {
         
         do {
             try managedObjectContext.save()
-            print ("saved")
         }
         catch let error {
             print("Could not save Core Data: \(error)")

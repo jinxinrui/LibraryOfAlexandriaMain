@@ -52,7 +52,8 @@
         <!--Search Books-->
         <scene sceneID="8uS-06-CHh">
             <objects>
-                <tableViewController id="dye-jb-pZe" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOw-wl-ie5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="dye-jb-pZe" customClass="SearchBookTableViewController" customModule="LibraryOfAlexandria" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sE1-4N-FYN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,9 +112,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Search Books" id="u2z-bp-Q6m"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lOw-wl-ie5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="915.29235382308855"/>
+            <point key="canvasLocation" x="670" y="936"/>
         </scene>
         <!--Add New Book-->
         <scene sceneID="koQ-a8-Y4Q">
