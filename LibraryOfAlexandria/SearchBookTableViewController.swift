@@ -126,10 +126,18 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            
             let deletedBook = filteredList.remove(at: indexPath.row)
-            // books and filteredList should be both removed
-            books.remove(at: indexPath.row)
+            
             managedObjectContext.delete(deletedBook)
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Book")
+            do{
+                books = try managedObjectContext.fetch(fetchRequest) as! [Book]
+            }
+            catch {
+                fatalError("Failed to fetch books: \(error)")
+            }
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
