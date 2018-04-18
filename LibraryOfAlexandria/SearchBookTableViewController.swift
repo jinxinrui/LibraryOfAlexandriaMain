@@ -127,6 +127,8 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
         if editingStyle == .delete {
             // Delete the row from the data source
             let deletedBook = filteredList.remove(at: indexPath.row)
+            // books and filteredList should be both removed
+            books.remove(at: indexPath.row)
             managedObjectContext.delete(deletedBook)
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -150,12 +152,13 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
         let year = String(selectedBook.year)
         let genre = selectedBook.genre
         let descr = selectedBook.descr
-        print("did select a row")
+        
         aBook = [title!, isbn!, author!, publisher!, edition, year, genre!, descr!]
         // performSegue() will trigger prepare(for segue, sender)
         performSegue(withIdentifier: "viewDetailSegue", sender: self)
     }
     
+    // prepare for segue and didSelectRowAt cannot be perform at the same time
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDetailSegue" {
             
