@@ -14,6 +14,8 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
     private var books: [Book] = []
     
     private var filteredList: [Book] = []
+    // a list of string to store the selcted book detail and send to the BookDetailViewController
+    var aBook: [String]?
 
     private var managedObjectContext: NSManagedObjectContext
     
@@ -134,8 +136,36 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
             saveData()
         }
     }
-        
     
+    // select row before perform segue
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedBook = filteredList[indexPath.row]
+        
+        let title = selectedBook.title
+        let isbn = selectedBook.isbn
+        let author = selectedBook.author
+        let publisher = selectedBook.publisher
+        let edition = String(selectedBook.edition)
+        let year = String(selectedBook.year)
+        let genre = selectedBook.genre
+        let descr = selectedBook.descr
+        print("did select a row")
+        aBook = [title!, isbn!, author!, publisher!, edition, year, genre!, descr!]
+        // performSegue() will trigger prepare(for segue, sender)
+        performSegue(withIdentifier: "viewDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewDetailSegue" {
+            
+            if let destinationVC = segue.destination as? BookDetailViewController {
+                // currentBook defined in createConfirmationViewController
+                destinationVC.currentBook = aBook!
+            }
+        }
+    }
+ 
 
     /*
     // Override to support rearranging the table view.

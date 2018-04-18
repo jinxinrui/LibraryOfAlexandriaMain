@@ -24,6 +24,7 @@
 		AF5E973A207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9739207DE4C2005B6A86 /* LibraryOfAlexandriaTests.swift */; };
 		AF5E9745207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9744207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift */; };
 		AF5E9755207DE5D3005B6A86 /* AddNewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E9754207DE5D3005B6A86 /* AddNewBookViewController.swift */; };
+		AF9134EB20863A120014A234 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9134EA20863A120014A234 /* BookDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		AF5E9744207DE4C2005B6A86 /* LibraryOfAlexandriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOfAlexandriaUITests.swift; sourceTree = "<group>"; };
 		AF5E9746207DE4C2005B6A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF5E9754207DE5D3005B6A86 /* AddNewBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBookViewController.swift; sourceTree = "<group>"; };
+		AF9134EA20863A120014A234 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				AF3742A22080D8B300E848A6 /* SearchTableViewCell.swift */,
 				5BC70C002081CEFD00B11B48 /* SearchBookTableViewController.swift */,
 				5BC70C122081E6B900B11B48 /* createConfirmationViewController.swift */,
+				AF9134EA20863A120014A234 /* BookDetailViewController.swift */,
 			);
 			path = LibraryOfAlexandria;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				AF5E972A207DE4C2005B6A86 /* LibraryOfAlexandria.xcdatamodeld in Sources */,
 				5BC70C132081E6B900B11B48 /* createConfirmationViewController.swift in Sources */,
+				AF9134EB20863A120014A234 /* BookDetailViewController.swift in Sources */,
 				5BC70C102081D38F00B11B48 /* Book+CoreDataClass.swift in Sources */,
 				AF5E9724207DE4C2005B6A86 /* ViewController.swift in Sources */,
 				5BC70C0F2081D38F00B11B48 /* BookList+CoreDataProperties.swift in Sources */,
