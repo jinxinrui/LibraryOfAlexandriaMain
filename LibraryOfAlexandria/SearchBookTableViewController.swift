@@ -15,7 +15,9 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
     
     private var filteredList: [Book] = []
     // a list of string to store the selcted book detail and send to the BookDetailViewController
-    var aBook: [String]?
+    private var aBook: [String]?
+    
+    private var bookItem: Book?
 
     private var managedObjectContext: NSManagedObjectContext
     
@@ -161,6 +163,7 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
         let genre = selectedBook.genre
         let descr = selectedBook.descr
         
+        bookItem = selectedBook
         aBook = [title!, isbn!, author!, publisher!, edition, year, genre!, descr!]
         // performSegue() will trigger prepare(for segue, sender)
         performSegue(withIdentifier: "viewDetailSegue", sender: self)
@@ -173,6 +176,7 @@ class SearchBookTableViewController: UITableViewController, UISearchResultsUpdat
             if let destinationVC = segue.destination as? BookDetailViewController {
                 // currentBook defined in createConfirmationViewController
                 destinationVC.currentBook = aBook!
+                destinationVC.bookToEdit = bookItem!
             }
         }
     }

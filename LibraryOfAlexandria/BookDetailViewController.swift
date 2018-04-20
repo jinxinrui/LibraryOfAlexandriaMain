@@ -26,7 +26,13 @@ class BookDetailViewController: UIViewController {
     
     @IBOutlet weak var descrLabel: UILabel!
     
+    @IBAction func editButton(_ sender: Any) {
+        performSegue(withIdentifier: "editSegue", sender: self)
+    }
+    
     var currentBook: [String] = []
+    
+    var bookToEdit: Book?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,6 +57,15 @@ class BookDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSegue" {
+            
+            if let destinationVC = segue.destination as? BookEditViewController {
+                destinationVC.receivebook = bookToEdit!
+            }
+        }
     }
     
 
