@@ -99,7 +99,7 @@ class BookEditViewController: UIViewController {
 //        } else if ifEmpty(isbn!) {
 //            alert("isbn cannot be empty")
 //        } else if ifEmpty(author!) {
-//            alert("<#T##messageString: String##String#>")
+//            alert("")
 //        }
         
         ifEmpty(title!, "Title")
